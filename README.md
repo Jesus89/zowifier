@@ -1,4 +1,4 @@
-# Zowificator
+# Zowifier
 
 ## Install
 
@@ -32,5 +32,5 @@ node server.js
 
 ```
 
-Open web browser: 127.0.0.1:3000
+Open a web browser: http://127.0.0.1:3000
 
