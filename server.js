@@ -4,13 +4,14 @@ var express = require("express");
 var multer = require("multer");
 var app = express();
 var done=false;
-var zipdone=false;
+var file='';
 
 /*Configure the multer.*/
 
 app.use(multer({ dest: './uploads/',
  rename: function (fieldname, filename) {
-    return "head"; //filename+Date.now();
+    file=filename 
+    return "body";
   },
 onFileUploadStart: function (file) {
   console.log(file.originalname + ' is starting ...')
@@ -27,7 +28,7 @@ var meshDiff = function(res) {
 	var sys = require('sys');
 	var exec = require('child_process').exec;
 	function puts(error, stdout, stderr) { sys.puts(stdout); res.sendfile("download.html"); } 
-	exec("freecadcmd ./diff.py", puts);
+	exec("blender --background --python ./diff.py", puts);
 }
 
 /*Zip STL files.*/
@@ -35,8 +36,8 @@ var zipSTL = function(res) {
 	console.log("Zip STL files...");
         var sys = require('sys');
         var exec = require('child_process').exec;
-        function puts(error, stdout, stderr) { sys.puts(stdout); res.download("./uploads/myzowi.zip"); }
-        exec("zip ./uploads/myzowi.zip ./uploads/*.stl", puts);
+        function puts(error, stdout, stderr) { sys.puts(stdout); res.download("./uploads/zowi-"+file+".zip"); }
+        exec("zip -j ./uploads/zowi-"+file+".zip ./zowi/parts/*.stl ./uploads/*.stl", puts);
 }
 
 /*Handling routes.*/
