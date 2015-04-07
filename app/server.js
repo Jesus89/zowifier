@@ -44,7 +44,9 @@ var download = function(name, path, res) {
         function puts(error, stdout, stderr) {
         	sys.puts(stdout);
         	res.download(path + "zowi-" + name + ".zip");
-        	//exec("rm -rf " + path);
+		setTimeout(function() {
+        		exec("rm -rf " + path);
+		}, 1000);
         }
         exec("zip -j " + path + "zowi-" + name + ".zip " + __dirname + "/../zowi/parts/*.stl " + path + "body.stl", puts);
 }
@@ -58,7 +60,6 @@ var zowify = function(file, res) {
 		sys.puts(stdout);
 		download(file.originalname.replace(".stl",""), file.path.replace("body.stl",""), res);
         }
-	console.log("blender --background --python " + __dirname + "/../zowi/zowifier.py -- " + file.path + " " +__dirname + "/../zowi/hole.stl" + " " +__dirname + "/../zowi/shell.stl");
 	exec("blender --background --python " + __dirname + "/../zowi/zowifier.py -- " + file.path + " " +__dirname + "/../zowi/hole.stl" + " " +__dirname + "/../zowi/shell.stl", puts);
 }
 
