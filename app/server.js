@@ -1,5 +1,6 @@
 /*Define dependencies*/
 
+var path = require('path');
 var multer = require("multer");
 var express = require("express");
 var app = express();
@@ -43,9 +44,9 @@ var download = function(name, path, res) {
         function puts(error, stdout, stderr) {
         	sys.puts(stdout);
         	res.download(path + "zowi-" + name + ".zip");
-        	exec("rm -rf " + path);
+        	//exec("rm -rf " + path);
         }
-        exec("zip -j " + path + "zowi-" + name + ".zip ./zowi/parts/*.stl " + path + "body.stl", puts);
+        exec("zip -j " + path + "zowi-" + name + ".zip " + __dirname + "/../zowi/parts/*.stl " + path + "body.stl", puts);
 }
 
 /*Zowify the body*/
@@ -57,13 +58,13 @@ var zowify = function(file, res) {
 		sys.puts(stdout);
 		download(file.originalname.replace(".stl",""), file.path.replace("body.stl",""), res);
         }
-	exec("blender --background --python ./diff.py " + file.path, puts);
+	exec("blender --background --python " + __dirname + "/../zowi/zowifier.py -- " + file.path + " " +__dirname + "/../zowi/hole.stl", puts);
 }
 
 /*Handling routes*/
 
 app.get('/', function(req, res) {
-      res.sendfile("index.html");
+      res.sendfile(path.resolve(__dirname + "/../public/index.html"));
 });
 
 app.post('/', function(req, res) {

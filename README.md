@@ -28,7 +28,7 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 ```bash
 
-node server.js
+node app/server.js
 
 ```
 

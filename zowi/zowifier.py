@@ -2,12 +2,13 @@ import sys
 import bpy
 import datetime
 
-path = sys.argv[4]
+body_path = sys.argv[5]
+hole_path = sys.argv[6]
 
 b = datetime.datetime.now()
 
-bpy.ops.import_mesh.stl(filepath="./zowi/hole.stl")
-bpy.ops.import_mesh.stl(filepath=path)
+bpy.ops.import_mesh.stl(filepath=hole_path)
+bpy.ops.import_mesh.stl(filepath=body_path)
 
 body = bpy.context.scene.objects[0]
 hole = bpy.context.scene.objects[1]
@@ -20,7 +21,7 @@ bpy.ops.object.modifier_apply(apply_as='DATA', modifier='Booh')
 
 bpy.context.scene.objects.unlink(hole)
 
-bpy.ops.export_mesh.stl(filepath=path)
+bpy.ops.export_mesh.stl(filepath=body_path)
 
 e = datetime.datetime.now()
 
