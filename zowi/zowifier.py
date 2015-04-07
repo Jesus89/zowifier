@@ -2,9 +2,9 @@ import sys
 import bpy
 import datetime
 
-body_path = sys.argv[5]
-hole_path = sys.argv[6]
-shell_path = sys.argv[7]
+body_path = sys.argv[7]
+hole_path = sys.argv[8]
+shell_path = sys.argv[9]
 
 b = datetime.datetime.now()
 

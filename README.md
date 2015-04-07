@@ -6,6 +6,8 @@ For Ubuntu
 
 ```bash
 curl -sL https://deb.nodesource.com/setup | sudo bash -
+sudo add-apt-repository ppa:irie/blender
+sudo apt-get update
 sudo apt-get install nodejs blender
 
 git clone https://github.com/Jesus89/zowificator
