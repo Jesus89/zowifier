@@ -8,6 +8,7 @@ var done = false;
 
 /*Configure the multer*/
 
+app.use(express.static(__dirname + '/../public'));
 app.use(multer({ dest: '/tmp/',
 changeDest: function(dest, req, res) {
 	var newDestination = dest + Date.now() + '/';
