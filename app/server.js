@@ -58,7 +58,8 @@ var zowify = function(file, res) {
 		sys.puts(stdout);
 		download(file.originalname.replace(".stl",""), file.path.replace("body.stl",""), res);
         }
-	exec("blender --background --python " + __dirname + "/../zowi/zowifier.py -- " + file.path + " " +__dirname + "/../zowi/hole.stl", puts);
+	console.log("blender --background --python " + __dirname + "/../zowi/zowifier.py -- " + file.path + " " +__dirname + "/../zowi/hole.stl" + " " +__dirname + "/../zowi/shell.stl");
+	exec("blender --background --python " + __dirname + "/../zowi/zowifier.py -- " + file.path + " " +__dirname + "/../zowi/hole.stl" + " " +__dirname + "/../zowi/shell.stl", puts);
 }
 
 /*Handling routes*/
