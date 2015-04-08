@@ -1,3 +1,12 @@
+/*
+ * This file is part of the Zowifier project
+ *
+ *  License: GPL v3
+ *  Date: April 2015
+ *  Author: Jesús Arroyo Torrens <jesus.arroyo@bq.com>
+ * 
+ */
+
 /*Define dependencies*/
 
 var path = require('path');

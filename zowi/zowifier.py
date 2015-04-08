@@ -1,3 +1,13 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#
+# This file is part of the Zowifier project
+#
+#  License: GPL v3
+#  Date: April 2015
+#  Author: Jesús Arroyo Torrens <jesus.arroyo@bq.com>
+#
+
 import sys
 import bpy
 import datetime
