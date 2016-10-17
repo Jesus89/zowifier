@@ -1,0 +1,17 @@
+{
+  "name": "zowifier",
+  "version": "1.0.0",
+  "description": "Little web service to generate Zowis using any STL model ",
+  "author": "Jesús Arroyo <jesus.arroyo@bq.com>",
+  "repository": "https://github.com/Jesus89/zowifier",
+  "license": "GPL-3.0",
+  "scripts": {
+    "start": "node app.js",
+    "postinstall": "if [ ! -d blender ]; then wget http://mirror.cs.umn.edu/blender.org/release/Blender2.78/blender-2.78-linux-glibc211-x86_64.tar.bz2; tar -jxvf blender-2.78-linux-glibc211-x86_64.tar.bz2; mv blender-2.78-linux-glibc211-x86_64 blender; fi; rm -f blender-2.78-linux-glibc211-x86_64.tar.bz2*"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "multer": "^1.0.1",
+    "open": "0.0.5"
+  }
+}

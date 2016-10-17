@@ -1,38 +1,30 @@
 # Zowifier
 
-## Install
+## Development
 
-For Ubuntu
-
+Install [nodejs](https://github.com/nodejs/node), tar and zip.
 ```bash
-curl -sL https://deb.nodesource.com/setup | sudo bash -
-sudo add-apt-repository ppa:irie/blender
-sudo apt-get update
-sudo apt-get install nodejs blender
-
-git clone https://github.com/Jesus89/zowificator
-cd zowificator
-
-npm install express
-npm install multer 
-
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs tar zip
 ```
 
-NOTE: if "node" is not found try:
+### Download
 
 ```bash
-
-sudo ln -s /usr/bin/nodejs /usr/bin/node
-
+git clone https://github.com/Jesus89/zowifier.git
+cd zowifier
 ```
 
-## Execute
+### Install
 
 ```bash
-
-node app/server.js
-
+npm install
 ```
 
-Open a web browser: http://127.0.0.1:3000
+### Execute
 
+```bash
+npm start
+```
+
+The web is opened in http://localhost:8080/

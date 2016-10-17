@@ -12,9 +12,9 @@ import sys
 import bpy
 import datetime
 
-body_path = sys.argv[7]
-hole_path = sys.argv[8]
-shell_path = sys.argv[9]
+body_path = sys.argv[5]
+hole_path = sys.argv[6]
+shell_path = sys.argv[7]
 
 b = datetime.datetime.now()
 
@@ -43,7 +43,7 @@ bpy.ops.object.modifier_apply(apply_as='DATA', modifier='DBH')
 bpy.context.scene.objects.unlink(hole)
 
 #- Export STL mesh
-bpy.ops.export_mesh.stl(filepath=body_path)
+bpy.ops.export_mesh.stl(filepath='uploads/body.stl')
 
 e = datetime.datetime.now()
 

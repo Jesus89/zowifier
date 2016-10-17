@@ -1,33 +1,33 @@
 <center>
 
-<h1>bq Zowifier</h1>
+<h1>Zowifier</h1>
 <h3>Proof of concept</h3>
 
-<img src="./img/zowi-head.png">
+<img src="img/zowi-head.png">
 
 <p>&nbsp;</p>
 
-<h4>1. Scale and center your STL with Cura</h4>
+<h3>1. Scale and center your STL with Cura</h3>
 
-<img src="./img/cura.png">
+<img src="img/cura.png">
 
 <p>NOTE: Hole is aprox 80x80x80 mm</p>
 
-<h4>2. Select your STL file and press Zowify!</h4>
+<h3>2. Select your STL file and press Zowify!</h3>
 
 <p>A zip file with all the parts will be downloaded</p>
 
 <form id      = "uploadForm"
       enctype = "multipart/form-data"
-      action  = "/"
+      action  = "/upload"
       method  = "post"
 >
-	<input type="file" name="userFile" />
+	<input type="file" name="userFile" accept=".stl"/>
 	<input type="submit" value="Zowify" name="submit">
 </form>
 
-<h4>3. Print your Zowi parts and enjoy!</h4>
+<h3>3. Print your Zowi parts and enjoy!</h3>
 
-<img src="./img/zowi-vader.png">
+<img src="img/zowi-vader.png">
 
 </center>
